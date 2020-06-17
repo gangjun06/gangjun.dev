@@ -10,6 +10,7 @@ import App from "./components/App";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import Account from "./pages/Account";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Route exact path="/" component={Home} />
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/account" component={Account} />
         <Route path="/services" component={Services} />
         <Route path="/about" component={About} />
         <Route path="/posts" component={Posts} />

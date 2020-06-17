@@ -58,7 +58,7 @@ export default () => {
           <BuildMenu />
           <div>
             <Link
-              to="/signup"
+              to="/account"
               className="inline-block text-md px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 lg:mt-0"
             >
               account

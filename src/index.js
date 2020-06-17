@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Posts from "./pages/Posts";
 import NotMatch from "./pages/NotMatch";
 
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route path="/signup" component={SignUp} />
         <Route path="/services" component={Services} />
         <Route path="/about" component={About} />
+        <Route path="/posts" component={Posts} />
         <Route path="/contact" component={Contact} />
         <Route component={NotMatch} />
       </Switch>

@@ -5,7 +5,8 @@ import { isMobile } from "react-device-detect";
 export default () => {
   let [isOpen, setIsOpen] = useState(false);
   const navMenu = [
-    { name: "AboutMe", link: "/about" },
+    { name: "About Me", link: "/about" },
+    { name: "Posts", link: "/posts" },
     { name: "Services", link: "/services" },
     { name: "Contact", link: "/contact" },
   ];

@@ -9,13 +9,10 @@ const App = (props) => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto mt-8">{props.children}</div>
-      <div
-        className="text-center py-4 w-full"
-        style={{ position: "absolute", bottom: 0 }}
-      >
-        &copy;2020. GangjunDev
+      <div className="container mx-auto mt-8" style={{ minHeight: "80vh" }}>
+        {props.children}
       </div>
+      <div className="text-center py-4 w-full">&copy;2020. GangjunDev</div>
     </>
   );
 };

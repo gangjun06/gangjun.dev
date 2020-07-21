@@ -5,16 +5,17 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./assets/styles/tailwind-build.css";
+import "./assets/styles/main.css";
 
 import App from "./components/App";
 import Home from "./pages/Home";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
-import Account from "./pages/Account";
-import Services from "./pages/Services";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Posts from "./pages/Posts";
+// import SignIn from "./pages/SignIn";
+// import SignUp from "./pages/SignUp";
+// import Account from "./pages/Account";
+// import Services from "./pages/Services";
+// import About from "./pages/About";
+// import Contact from "./pages/Contact";
+// import Posts from "./pages/Posts";
 import NotMatch from "./pages/NotMatch";
 
 ReactDOM.render(
@@ -22,13 +23,13 @@ ReactDOM.render(
     <App>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/signin" component={SignIn} />
+        {/* <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
         <Route path="/account" component={Account} />
         <Route path="/services" component={Services} />
         <Route path="/about" component={About} />
         <Route path="/posts" component={Posts} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/contact" component={Contact} /> */}
         <Route component={NotMatch} />
       </Switch>
     </App>

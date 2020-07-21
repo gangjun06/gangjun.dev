@@ -5,10 +5,9 @@ import { isMobile } from "react-device-detect";
 export default () => {
   let [isOpen, setIsOpen] = useState(false);
   const navMenu = [
-    { name: "About Me", link: "/about" },
-    { name: "Posts", link: "/posts" },
-    { name: "Services", link: "/services" },
-    { name: "Contact", link: "/contact" },
+    { name: "About Me", link: "#about" },
+    { name: "Projects", link: "#projects" },
+    { name: "Etc", link: "#etc" },
   ];
 
   const BuildMenu = () => {
@@ -33,7 +32,7 @@ export default () => {
 
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64">
+      <nav className="flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64 z-50 fixed w-full">
         <div className="flex items-center text-white mr-6">
           <Link to="/" className="font-semibold text-xl tracking-wide">
             GangjunDev
@@ -56,14 +55,14 @@ export default () => {
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <BuildMenu />
-          <div>
+          {/* <div>
             <Link
               to="/account"
               className="inline-block text-md px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 lg:mt-0"
             >
               account
             </Link>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 
 export default () => {
   let [isOpen, setIsOpen] = useState(false);
+  let [isTop, setIsTop] = useState(true);
+
+  const styles = {
+    onScrollTop: {
+      opacity: 0,
+    },
+  };
+
+  useEffect(() => {
+    window.onscroll = function () {
+      if (window.pageYOffset !== 0) {
+        setIsTop(false);
+      } else {
+        setIsTop(true);
+      }
+    };
+  }, []);
+
   const navMenu = [
     { name: "About Me", link: "#about" },
     { name: "Projects", link: "#projects" },
@@ -32,7 +50,10 @@ export default () => {
 
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64 z-50 fixed w-full">
+      <nav
+        className="flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64 z-50 fixed w-full"
+        style={isTop && styles.onScrollTop}
+      >
         <div className="flex items-center text-white mr-6">
           <Link to="/" className="font-semibold text-xl tracking-wide">
             GangjunDev

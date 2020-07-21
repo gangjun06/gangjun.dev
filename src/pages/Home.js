@@ -2,8 +2,8 @@ import React from "react";
 import Typist from "react-typist";
 import { Link } from "react-router-dom";
 
-class Home extends React.Component {
-  styles = {
+const Home = () => {
+  const styles = {
     mainBG: {
       transform: "skewY(-4deg)",
       transformOrigin: "top left",
@@ -20,32 +20,63 @@ class Home extends React.Component {
     },
   };
 
-  render() {
-    return (
-      <>
-        <div style={this.styles.mainBG} className="text-center">
-          <div style={this.styles.centerAll} className="text-white">
-            <div className="text-6xl font-bold">
-              <Typist
-                avgTypingDelay={40}
-                cursor={{ blink: true, element: "_" }}
-                startDelay={500}
-              >
-                Developer Gangjun
-                {/* <Typist.Backspace delay={500} count={20} />
+  return (
+    <>
+      <div style={styles.mainBG} className="text-center">
+        <div style={styles.centerAll} className="text-white">
+          <div className="text-6xl font-bold">
+            <Typist
+              avgTypingDelay={40}
+              cursor={{ blink: true, element: "_" }}
+              startDelay={500}
+            >
+              Developer Gangjun
+              {/* <Typist.Backspace delay={500} count={20} />
               Welcome to Visit my website! */}
-              </Typist>
-            </div>
-          </div>
-          <div class="arrowBox">
-            <span></span>
-            <span></span>
-            <span></span>
+            </Typist>
           </div>
         </div>
-      </>
-    );
-  }
-}
+        <div class="arrowBox">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div className="mx-4 lg:mx-64">
+        <div className="mt-8">
+          <div className="text-6xl text-center">About Me</div>
+          <div className="text-center text-xl">
+            Hello. I'm Gangjun Lee, 15, who likes programming. <br />I like
+            learning new things and moving forward rather than staying fixed.
+            <br />I want to learn hard and help many people in the future.
+          </div>
+        </div>
+        <div className="mt-8">
+          <div className="text-6xl text-center">Skills</div>
+          <div className="grid grid-cols-4 gap-4 text-6xl">
+            <i class="devicon-react-original colored flex justify-center"></i>
+            <i class="devicon-vuejs-plain colored flex justify-center"></i>
+            <i class="devicon-express-original-wordmark flex justify-center"></i>
+            <i class="devicon-css3-plain-wordmark colored flex justify-center"></i>
+            <i class="devicon-nginx-original colored flex justify-center"></i>
+            <i class="devicon-linux-plain colored flex justify-center"></i>
+            <i class="devicon-mysql-plain colored flex justify-center"></i>
+            <i class="devicon-cplusplus-plain colored flex justify-center"></i>
+          </div>
+        </div>
+      </div>
+      <div className="mt-8 text-center">
+        <div className="text-6xl">Contact</div>
+        <div className="text-xl">
+          <div>mail: me@gangjun.dev</div>
+          <div>discord: gangjun06#8932</div>
+          <div>
+            github: <a href="https://github.com/gangjun06">gangjun06</a>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Home;

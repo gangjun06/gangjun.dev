@@ -4,6 +4,10 @@ html {
   font-family: "Noto Sans KR", sans-serif;
 }
 
+.opacityAnimation {
+  transition: background 400ms ease;
+}
+
 .arrowBox {
   position: absolute;
   top: 80%;

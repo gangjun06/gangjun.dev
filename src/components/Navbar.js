@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
+import { Link as ReactScrollLink, animateScroll as scroll } from "react-scroll";
 
 export default () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -17,27 +18,26 @@ export default () => {
   }, []);
 
   const navMenu = [
-    { name: "About Me", link: "#about" },
-    { name: "Projects", link: "#projects" },
-    { name: "Etc", link: "#etc" },
+    { name: "About Me", link: "About" },
+    { name: "Projects", link: "Projects" },
+    { name: "Contact", link: "Contact" },
   ];
 
   const BuildMenu = () => {
     const menuList = navMenu.map((item, index) => (
-      <Link
+      <ReactScrollLink
         key={index}
+        activeClass="active"
         to={item.link}
-        className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-200 mr-4"
+        spy={true}
+        smooth={true}
+        className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-200 mr-4 cursor-pointer"
       >
         {item.name}
-      </Link>
+      </ReactScrollLink>
     ));
     if (isMobile) {
-      return isOpen ? (
-        <div className="text-md lg:flex-grow">{menuList}</div>
-      ) : (
-        <></>
-      );
+      return <></>;
     }
     return <div className="text-md lg:flex-grow">{menuList}</div>;
   };
@@ -45,42 +45,23 @@ export default () => {
   return (
     <div>
       <nav
-        className={`flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64 z-50 fixed w-full`}
+        className="flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64 z-50 fixed w-full opacityAnimation"
         style={{
-          transition: "opacity 400ms ease",
           "--bg-opacity": isTop ? "0" : "0.75",
         }}
       >
         <div className="flex items-center text-white mr-6">
-          <Link to="/" className="font-semibold text-xl tracking-wide">
+          <Link
+            to="/"
+            className="font-semibold text-xl tracking-wide"
+            onClick={scroll.scrollToTop}
+          >
             GangjunDev
           </Link>
         </div>
-        <div className="block lg:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
-          >
-            <svg
-              className="fill-current h-3 w-3"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
+        <div className="block"></div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <BuildMenu />
-          {/* <div>
-            <Link
-              to="/account"
-              className="inline-block text-md px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 lg:mt-0"
-            >
-              account
-            </Link>
-          </div> */}
         </div>
       </nav>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Typist from "react-typist";
-import { Link } from "react-router-dom";
+import { Element, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
   const styles = {
@@ -10,6 +10,7 @@ const Home = () => {
       backgroundImage: `url("https://cdn.discordapp.com/attachments/704599857083449366/722677588484423721/luca-bravo-XJXWbfSo2f0-unsplash_1.jpg")`,
       backgroundSize: "cover",
       height: "85vh",
+      backgroundAttachment: "fixed",
     },
     centerAll: {
       position: "absolute",
@@ -36,13 +37,16 @@ const Home = () => {
             </Typist>
           </div>
         </div>
-        <div class="arrowBox">
+        <div
+          className="arrowBox cursor-pointer"
+          onClick={() => scroll.scrollMore(500)}
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-      <div className="mx-4 lg:mx-64">
+      <Element className="mx-4 lg:mx-64" name="About">
         <div className="mt-8">
           <div className="text-6xl text-center">About Me</div>
           <div className="text-center text-xl">
@@ -54,18 +58,18 @@ const Home = () => {
         <div className="mt-8">
           <div className="text-6xl text-center">Skills</div>
           <div className="grid grid-cols-4 gap-4 text-6xl">
-            <i class="devicon-react-original colored flex justify-center"></i>
-            <i class="devicon-vuejs-plain colored flex justify-center"></i>
-            <i class="devicon-express-original-wordmark flex justify-center"></i>
-            <i class="devicon-css3-plain-wordmark colored flex justify-center"></i>
-            <i class="devicon-nginx-original colored flex justify-center"></i>
-            <i class="devicon-linux-plain colored flex justify-center"></i>
-            <i class="devicon-mysql-plain colored flex justify-center"></i>
-            <i class="devicon-cplusplus-plain colored flex justify-center"></i>
+            <i className="devicon-react-original colored flex justify-center" />
+            <i className="devicon-vuejs-plain colored flex justify-center" />
+            <i className="devicon-express-original-wordmark flex justify-center" />
+            <i className="devicon-css3-plain-wordmark colored flex justify-center" />
+            <i className="devicon-nginx-original colored flex justify-center" />
+            <i className="devicon-linux-plain colored flex justify-center" />
+            <i className="devicon-mysql-plain colored flex justify-center" />
+            <i className="devicon-cplusplus-plain colored flex justify-center" />
           </div>
         </div>
-      </div>
-      <div className="mt-8 text-center">
+      </Element>
+      <Element className="my-8 text-center" name="Contact">
         <div className="text-6xl">Contact</div>
         <div className="text-xl">
           <div>mail: me@gangjun.dev</div>
@@ -74,7 +78,7 @@ const Home = () => {
             github: <a href="https://github.com/gangjun06">gangjun06</a>
           </div>
         </div>
-      </div>
+      </Element>
     </>
   );
 };

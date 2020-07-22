@@ -6,12 +6,6 @@ export default () => {
   let [isOpen, setIsOpen] = useState(false);
   let [isTop, setIsTop] = useState(true);
 
-  const styles = {
-    onScrollTop: {
-      opacity: 0,
-    },
-  };
-
   useEffect(() => {
     window.onscroll = function () {
       if (window.pageYOffset !== 0) {
@@ -51,8 +45,11 @@ export default () => {
   return (
     <div>
       <nav
-        className="flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64 z-50 fixed w-full"
-        style={isTop && styles.onScrollTop}
+        className={`flex items-center justify-between flex-wrap bg-gray-900 p-6 xl:px-64 z-50 fixed w-full`}
+        style={{
+          transition: "opacity 400ms ease",
+          "--bg-opacity": isTop ? "0" : "0.75",
+        }}
       >
         <div className="flex items-center text-white mr-6">
           <Link to="/" className="font-semibold text-xl tracking-wide">

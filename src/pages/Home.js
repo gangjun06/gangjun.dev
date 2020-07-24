@@ -46,39 +46,48 @@ const Home = () => {
           <span></span>
         </div>
       </div>
-      <Element className="mx-4 lg:mx-64" name="About">
-        <div className="mt-8">
-          <div className="text-6xl text-center">About Me</div>
-          <div className="text-center text-xl">
-            Hello. I'm Gangjun Lee, 15, who likes programming. <br />I like
-            learning new things and moving forward rather than staying fixed.
-            <br />I want to learn hard and help many people in the future.
+      <div>
+        <Element className="mx-4 lg:mx-64" name="About">
+          <div className="mt-8">
+            <div className="text-5xl text-center">About Me</div>
+            <div className="text-center text-xl">
+              Hello. I'm full-stack developer Gangjun Lee, 15 years old from
+              korea.
+              <br />
+              I like learning new things and moving forward rather than staying
+              fixed.
+              <br />I want to learn hard and help many people in the future.
+              <br />
+            </div>
           </div>
-        </div>
-        <div className="mt-8">
-          <div className="text-6xl text-center">Skills</div>
-          <div className="grid grid-cols-4 gap-4 text-6xl">
-            <i className="devicon-react-original colored flex justify-center" />
-            <i className="devicon-vuejs-plain colored flex justify-center" />
-            <i className="devicon-express-original-wordmark flex justify-center" />
-            <i className="devicon-css3-plain-wordmark colored flex justify-center" />
-            <i className="devicon-nginx-original colored flex justify-center" />
-            <i className="devicon-linux-plain colored flex justify-center" />
-            <i className="devicon-mysql-plain colored flex justify-center" />
-            <i className="devicon-cplusplus-plain colored flex justify-center" />
+          <div className="mt-8">
+            <div className="text-5xl text-center">Skills</div>
+            <div className="grid grid-cols-4 gap-4 text-6xl">
+              <i className="devicon-react-original colored flex justify-center" />
+              <i className="devicon-vuejs-plain colored flex justify-center" />
+              <i className="devicon-express-original-wordmark flex justify-center" />
+              <i className="devicon-css3-plain-wordmark colored flex justify-center" />
+              <i className="devicon-nginx-original colored flex justify-center" />
+              <i className="devicon-linux-plain flex justify-center" />
+              <i className="devicon-mysql-plain colored flex justify-center" />
+              <i className="devicon-cplusplus-plain colored flex justify-center" />
+            </div>
           </div>
-        </div>
-      </Element>
-      <Element className="my-8 text-center" name="Contact">
-        <div className="text-6xl">Contact</div>
-        <div className="text-xl">
-          <div>mail: me@gangjun.dev</div>
-          <div>discord: gangjun06#8932</div>
-          <div>
-            github: <a href="https://github.com/gangjun06">gangjun06</a>
+        </Element>
+        <Element className="my-8 text-center" name="Contact">
+          <div className="text-5xl">Contact</div>
+          <div className="text-xl">
+            <div>mail: me@gangjun.dev</div>
+            <div>discord: gangjun06#8932</div>
+            <div>
+              github: <a href="https://github.com/gangjun06">gangjun06</a>
+            </div>
+            <div>
+              patreon: <a href="https://patreon.com/gangjun">gangjun</a>
+            </div>
           </div>
-        </div>
-      </Element>
+        </Element>
+      </div>
     </>
   );
 };

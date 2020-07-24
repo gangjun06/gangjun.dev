@@ -9,7 +9,7 @@ export default () => {
 
   useEffect(() => {
     window.onscroll = function () {
-      if (window.pageYOffset !== 0) {
+      if (window.pageYOffset < 0) {
         setIsTop(false);
       } else {
         setIsTop(true);

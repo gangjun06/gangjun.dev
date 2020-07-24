@@ -21,6 +21,25 @@ const Home = () => {
     },
   };
 
+  const BuildIcon = ({ icon }) => {
+    return (
+      <div>
+        <i className={`${icon} flex justify-center`} />
+      </div>
+    );
+  };
+
+  const IconList = [
+    { name: "devicon-react-original" },
+    { name: "devicon-vuejs-plain" },
+    { name: "devicon-express-original-wordmark", colored: false },
+    { name: "devicon-css3-plain-wordmark" },
+    { name: "devicon-nginx-original" },
+    { name: "devicon-linux-plain", colored: false },
+    { name: "devicon-mysql-plain" },
+    { name: "devicon-cplusplus-plain" },
+  ];
+
   return (
     <>
       <div style={styles.mainBG} className="text-center">
@@ -48,33 +67,35 @@ const Home = () => {
       </div>
       <div>
         <Element className="mx-4 lg:mx-64" name="About">
-          <div className="mt-8">
+          <div className="mt-12">
             <div className="text-5xl text-center">About Me</div>
             <div className="text-center text-xl">
-              Hello. I'm full-stack developer Gangjun Lee, 15 years old from
-              korea.
-              <br />
-              I like learning new things and moving forward rather than staying
-              fixed.
-              <br />I want to learn hard and help many people in the future.
-              <br />
+              <p>
+                Hello. I'm full-stack developer Gangjun Lee, 15 years old from
+                korea.
+              </p>
+              <p>
+                I like learning new things and moving forward rather than
+                staying fixed.
+              </p>
+              <p>I want to learn hard and help many people in the future.</p>
             </div>
           </div>
-          <div className="mt-8">
+          <div className="mt-16">
             <div className="text-5xl text-center">Skills</div>
             <div className="grid grid-cols-4 gap-4 text-6xl">
-              <i className="devicon-react-original colored flex justify-center" />
-              <i className="devicon-vuejs-plain colored flex justify-center" />
-              <i className="devicon-express-original-wordmark flex justify-center" />
-              <i className="devicon-css3-plain-wordmark colored flex justify-center" />
-              <i className="devicon-nginx-original colored flex justify-center" />
-              <i className="devicon-linux-plain flex justify-center" />
-              <i className="devicon-mysql-plain colored flex justify-center" />
-              <i className="devicon-cplusplus-plain colored flex justify-center" />
+              {IconList.map((item, index) => (
+                <BuildIcon
+                  icon={
+                    item.colored === false ? item.name : `${item.name} colored`
+                  }
+                  key={index}
+                />
+              ))}
             </div>
           </div>
         </Element>
-        <Element className="my-8 text-center" name="Contact">
+        <Element className="my-16 text-center" name="Contact">
           <div className="text-5xl">Contact</div>
           <div className="text-xl">
             <div>mail: me@gangjun.dev</div>

@@ -1,7 +1,7 @@
 baseURL = "https://gangjun.dev"
 languageCode = "en-us"
 theme = "simple-intro"
-title = "Title"
+title = "GangjunDev"
 publishDir = "docs"
 
 [params]

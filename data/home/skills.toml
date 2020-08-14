@@ -1,0 +1,30 @@
+[[list]]
+    name = "React"
+    icon = "https://devicons.github.io/devicon/devicon.git/icons/react/react-original.svg"
+    text = """
+    """
+[[list]]
+    name = "NodeJS"
+    icon = "https://devicons.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg"
+    text = """
+    """
+[[list]]
+    name = "Hugo"
+    icon = "https://gohugo.io/favicon.ico"
+    text = """
+    """
+[[list]]
+    name = "Go"
+    icon = "https://devicons.github.io/devicon/devicon.git/icons/go/go-original.svg"
+    text = """
+    """
+[[list]]
+    name = "C/C++"
+    icon = "https://devicons.github.io/devicon/devicon.git/icons/c/c-original.svg"
+    text = """
+    """
+[[list]]
+    name = "Linux"
+    icon = "https://devicons.github.io/devicon/devicon.git/icons/linux/linux-original.svg"
+    text = """
+    """

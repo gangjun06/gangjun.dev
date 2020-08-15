@@ -8,10 +8,10 @@ I want to learn hard and help many people in the future.
 
 [[link]]
     icon = "far fa-file-alt"
-    link = "https://blog.gangjun.dev"
+    url = "https://blog.gangjun.dev"
 [[link]]
     icon = "fab fa-patreon"
-    link = "https://patreon.com/gangjun"
+    url = "https://patreon.com/gangjun"
 [[link]]
     icon = "fab fa-github"
-    link = "https://github.com/gangjun06"
+    url = "https://github.com/gangjun06"

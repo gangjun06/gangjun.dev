@@ -4,11 +4,13 @@ import './styles/index.css'
 import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 import './styles/tailwind-build.css'
-
+import Home from './pages/Home'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App>
+      <Home />
+    </App>
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -1,0 +1,55 @@
+* {
+}
+body {
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* 
+1: white(#ffffff)
+2: dark(#2D2E32)
+3: deepDark(#25262A)
+4: green(#63F3AB)
+5: gray(#8C8D91)
+6: gray2(##333438)
+*/
+
+.bg-color-1 {
+  background-color: #ffffff;
+}
+.bg-color-2 {
+  background-color: #2d2e32;
+}
+.bg-color-3 {
+  background-color: #25262a;
+}
+.bg-color-4 {
+  background-color: #63f3ab;
+}
+.bg-color-5 {
+  background-color: #8c8d91;
+}
+.bg-color-6 {
+  background-color: #333438;
+}
+
+.font-color-1 {
+  color: #ffffff;
+}
+.font-color-2 {
+  color: #2d2e32;
+}
+.font-color-3 {
+  color: #25262a;
+}
+.font-color-4 {
+  color: #63f3ab;
+}
+.font-color-5 {
+  color: #8c8d91;
+}
+.font-color-6 {
+  color: #333438;
+}

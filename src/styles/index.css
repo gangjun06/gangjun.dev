@@ -1,4 +1,5 @@
 * {
+  font-family: 'JetBrains Mono', 'sans-serif';
 }
 body {
 }
@@ -7,6 +8,14 @@ body {
   min-height: 100vh;
 }
 
+#intro {
+  margin-top: 10vh;
+  min-height: 60vh;
+}
+
+#about {
+  min-height: 100vh;
+}
 /* 
 1: white(#ffffff)
 2: dark(#2D2E32)

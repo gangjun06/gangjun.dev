@@ -16,13 +16,38 @@ body {
 #about {
   min-height: 100vh;
 }
+
+/* .container-2 {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container-2 {
+    width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container-2 {
+    width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container-2 {
+    width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container-2 {
+    width: 1400px;
+  }
+} */
+
 /* 
 1: white(#ffffff)
 2: dark(#2D2E32)
 3: deepDark(#25262A)
 4: green(#63F3AB)
 5: gray(#8C8D91)
-6: gray2(##333438)
+6: gray2(#333438)
 */
 
 .bg-color-1 {

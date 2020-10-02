@@ -1,5 +1,6 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import IntroImg from '../assets/IntroImg.svg'
+import { GetContributions } from '../utils/github'
 
 const Home: FC = () => {
   return (
@@ -11,9 +12,15 @@ const Home: FC = () => {
 }
 
 const BuildIntro = () => {
+  const [contributionsCount, setContributionsCount] = useState<number>(0)
+
+  useEffect(() => {
+    GetContributions().then((data) => setContributionsCount(data))
+  }, [])
+
   return (
     <div id='intro'>
-      <div className='container mx-auto px-4 md:flex justify-between'>
+      <div className='container mx-auto px-4 md:flex justify-between items-center'>
         <div>
           <div className='flex'>
             <div className='bg-color-4 text-black px-2 py-1 rounded'>
@@ -32,7 +39,7 @@ const BuildIntro = () => {
             <a href='mailto:me@gangjun.dev'>Get In Touch</a>
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className='hidden md:block'>
           <img
             style={{ width: '500px', height: '500px' }}
             alt='intro'
@@ -51,7 +58,7 @@ const BuildIntro = () => {
           </div>
         </div>
         <div className='ml-4 sm:ml-32 flex items-center'>
-          <div className='text-5xl font-bold'>585</div>
+          <div className='text-5xl font-bold'>{contributionsCount}</div>
           <div className='ml-5 font-color-5'>
             <p>Contributions</p>
             <p>This Year</p>

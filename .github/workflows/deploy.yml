@@ -35,3 +35,4 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./build
           SCRIPT_MODE: true
+          CNAME: gangjun.dev

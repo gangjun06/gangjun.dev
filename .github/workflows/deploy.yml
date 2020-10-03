@@ -29,11 +29,9 @@ jobs:
           NODE_ENV: production
           CI: false
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.5.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
           cname: gangjun.dev
-        env:
-          PERSONAL_TOKEN: ${{secrets.GH_PAT}}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./build
-          SCRIPT_MODE: true
+          publish_dir: ./build
+          github_token: ${{secrets.GH_PAT}}
+          publish_branch: gh-pages

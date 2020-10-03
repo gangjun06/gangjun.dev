@@ -30,9 +30,10 @@ jobs:
           CI: false
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
+        with:
+          cname: gangjun.dev
         env:
           PERSONAL_TOKEN: ${{secrets.GH_PAT}}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./build
           SCRIPT_MODE: true
-          CNAME: gangjun.dev

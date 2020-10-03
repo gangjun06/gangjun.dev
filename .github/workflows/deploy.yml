@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --prod --pure-lockfile
       - name: Postcss
-        run: yarn global add postcss postcss-cli && postcss src/styles/tailwind.css -o src/styles/tailwind-build.css
+        run: yarn global add postcss postcss-cli && ~/.yarn/bin/postcss src/styles/tailwind.css -o src/styles/tailwind-build.css
       - name: Build
         run: yarn run build
         env:

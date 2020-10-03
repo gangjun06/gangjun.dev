@@ -24,7 +24,7 @@ jobs:
       - name: Get Tailwind
         run: wget https://drive.google.com/uc\?export\=download\&id\=1qYhG84-zg9ukq6IYrzCTCApr9a5EarHu --output-document=src/styles/tailwind-build.css
       - name: Build
-        run: yarn run build
+        run: CI = yarn run build
         env:
           NODE_ENV: production
       - name: Deploy

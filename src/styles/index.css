@@ -1,11 +1,16 @@
 * {
-  font-family: 'JetBrains Mono', 'sans-serif';
   scroll-behavior: smooth;
 }
+
+html {
+  background-color: #2d2e32;
+}
+
 body {
 }
 
 #app {
+  font-family: 'JetBrains Mono', 'sans-serif';
   min-height: 100vh;
 }
 

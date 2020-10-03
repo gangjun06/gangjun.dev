@@ -7,7 +7,7 @@ const Intro: FC = () => {
   const [contributionsCount, setContributionsCount] = useState<number>(0)
 
   useEffect(() => {
-    // GetContributions().then((data) => setContributionsCount(data))
+    GetContributions().then((data) => setContributionsCount(data))
   }, [])
 
   return (

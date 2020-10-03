@@ -20,7 +20,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-build-${{ runner.OS }}-
       - name: Install dependencies
-        run: yarn install --prod --pure-lockfile && yarn global add postcss postcss-cli tailwindcss
+        run: yarn install --prod --pure-lockfile
       - name: Build
         run: yarn run build
         env:

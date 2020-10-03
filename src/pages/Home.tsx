@@ -4,6 +4,11 @@ import { GetContributions } from '../utils/github'
 import Container from '../components/Container'
 import { motion } from 'framer-motion'
 import AboutItem from '../components/AboutItem'
+import {
+  faCode,
+  faMobileAlt,
+  faPalette
+} from '@fortawesome/free-solid-svg-icons'
 
 const Home: FC = () => {
   return (
@@ -39,7 +44,7 @@ const BuildIntro = () => {
             <p>And I love what I do.</p>
           </div>
           <div className='font-color-4 mt-12 text-lg underline cursor-pointer'>
-            <a href='mailto:me@gangjun.dev'>Get In Touch</a>
+            <a href='#contact'>Get In Touch</a>
           </div>
         </div>
         <div className='hidden md:block'>
@@ -49,25 +54,23 @@ const BuildIntro = () => {
             src={IntroImg}
           />
         </div>
+        <div className='flex' style={{ position: 'absolute', bottom: '25vh' }}>
+          <div className='flex items-center'>
+            <div className='text-5xl font-bold'>2</div>
+            <div className='ml-5 font-color-5'>
+              <p>Years</p>
+              <p>Experience</p>
+            </div>
+          </div>
+          <div className='ml-4 sm:ml-32 flex items-center'>
+            <div className='text-5xl font-bold'>{contributionsCount}</div>
+            <div className='ml-5 font-color-5'>
+              <p>Contributions</p>
+              <p>This Year</p>
+            </div>
+          </div>
+        </div>
       </Container>
-      <div
-        className='flex mx-64 py-12'
-        style={{ position: 'absolute', bottom: '25vh' }}>
-        <div className='flex items-center'>
-          <div className='text-5xl font-bold'>2</div>
-          <div className='ml-5 font-color-5'>
-            <p>Years</p>
-            <p>Experience</p>
-          </div>
-        </div>
-        <div className='ml-4 sm:ml-32 flex items-center'>
-          <div className='text-5xl font-bold'>{contributionsCount}</div>
-          <div className='ml-5 font-color-5'>
-            <p>Contributions</p>
-            <p>This Year</p>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
@@ -89,9 +92,17 @@ const BuildAbout = () => {
           </div>
         </div>
         <motion.ul className='flex-1 flex flex-col gap-y-2 mt-8 md:mt-0'>
-          <AboutItem />
-          <AboutItem />
-          <AboutItem />
+          <AboutItem
+            title='Full-Stack'
+            text='React, NextJS, NodeJS, GO'
+            icon={faPalette}
+          />
+          <AboutItem
+            title='Mobile'
+            text='Flutter, React-Native'
+            icon={faMobileAlt}
+          />
+          <AboutItem title='Etc' text='C, C++, Rust' icon={faCode} />
         </motion.ul>
       </Container>
     </div>

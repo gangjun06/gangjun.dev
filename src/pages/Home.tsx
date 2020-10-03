@@ -4,6 +4,7 @@ import { GetContributions } from '../utils/github'
 import Container from '../components/Container'
 import { motion } from 'framer-motion'
 import AboutItem from '../components/AboutItem'
+import ProjectItem from '../components/ProjectItem'
 import {
   faCode,
   faMobileAlt,
@@ -15,6 +16,7 @@ const Home: FC = () => {
     <div className=' '>
       <BuildIntro />
       <BuildAbout />
+      {/* <BuildProjects /> */}
     </div>
   )
 }
@@ -78,7 +80,7 @@ const BuildIntro = () => {
 const BuildAbout = () => {
   return (
     <div id='about' className='bg-color-3'>
-      <Container className='md:flex flex-row-reverse justify-between items-stretch pt-48 md:gap-x-12'>
+      <Container className='md:flex flex-row-reverse justify-between items-stretch pt-48 pb-24 md:gap-x-24'>
         <div className='flex-1'>
           <div className='font-color-5'>Introduce</div>
           <div className='mt-4 font-semibold text-4xl'>
@@ -104,6 +106,42 @@ const BuildAbout = () => {
           />
           <AboutItem title='Etc' text='C, C++, Rust' icon={faCode} />
         </motion.ul>
+      </Container>
+    </div>
+  )
+}
+
+const BuildProjects = () => {
+  return (
+    <div id='projects' className='bg-color-3'>
+      <Container className='py-24 md:flex md:gap-x-24'>
+        <div className='flex-1 mb-8'>
+          <div className='flex justify-center'>
+            <div>
+              <div className='font-semibold text-4xl'>Projects</div>
+              <div className='font-color-5'>
+                List of projects I have worked on
+              </div>
+            </div>
+          </div>
+          <ProjectItem
+            text='ProjectName'
+            tags={['react', 'go']}
+            color='#2D2E32'
+          />
+        </div>
+        <div className='flex-1'>
+          <ProjectItem
+            text='ProjectName'
+            tags={['react', 'go']}
+            color='#2D2E32'
+          />
+          <ProjectItem
+            text='ProjectName'
+            tags={['react', 'go']}
+            color='#2D2E32'
+          />
+        </div>
       </Container>
     </div>
   )

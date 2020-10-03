@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 type props = {
-    className: string
+    className?: string
 }
 
 const Container: FC<props> = ({ children, className }) => {

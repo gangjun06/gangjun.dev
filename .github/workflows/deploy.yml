@@ -23,6 +23,8 @@ jobs:
         run: yarn install --prod --pure-lockfile
       - name: Get Tailwind
         run: wget https://drive.google.com/uc\?export\=download\&id\=1qYhG84-zg9ukq6IYrzCTCApr9a5EarHu --output-document=src/styles/tailwind-build.css
+      - name: Write Config File
+        run: echo "${{secrets.CONFIG}}" >> src/config.json
       - name: Build
         run: yarn run build
         env:

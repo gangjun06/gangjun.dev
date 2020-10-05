@@ -4,10 +4,13 @@ import './styles/index.css'
 import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 import './styles/tailwind-build.css'
+import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
+import { ToastContainer } from 'react-toastify'
 
 render(
   <React.StrictMode>
+    <ToastContainer />
     <App>
       <Home />
     </App>

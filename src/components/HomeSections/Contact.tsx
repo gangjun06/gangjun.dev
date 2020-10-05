@@ -11,6 +11,7 @@ const Contact: FC = () => {
   const [email, setEmail] = useState<string>('')
   const [text, setText] = useState<string>('')
   const [captchaValue, setCaptchaValue] = useState<string>('')
+  const [sended, setSended] = useState<boolean>(false)
 
   const [contactMethods, setContactMethods] = useState<any[]>([
     {
@@ -40,6 +41,7 @@ const Contact: FC = () => {
   )
 
   const submitEmail = async () => {
+    if (sended) return toast.warning('You already sended')
     const [trimTitle, trimEmail, trimText] = [
       title.trim(),
       email.trim(),
@@ -62,14 +64,16 @@ const Contact: FC = () => {
       })
 
       toast.info('Successful sending')
+      setSended(true)
     } catch (e) {
       toast.warning('Error While sending content')
     }
   }
 
   useEffect(() => {
-    Axios.get('https://api.gangjun.dev/v1/info/discord')
-      .then((res) => {
+    const fetch = async () => {
+      try {
+        const res = await Axios.get('https://api.gangjun.dev/v1/info/discord')
         const { username, discriminator } = res.data
         contactMethods.pop()
         setContactMethods(
@@ -78,10 +82,12 @@ const Contact: FC = () => {
             value: username + '#' + discriminator
           })
         )
-      })
-      .catch((e) => {
+      } catch (e) {
         toast.error('error while loading discord information')
-      })
+      }
+    }
+    fetch()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const inputStyle =
@@ -95,7 +101,7 @@ const Contact: FC = () => {
           <div className='font-color-5'>Contact to Gangjun Lee</div>
           <div className='mt-8'>
             {contactMethods.map((item, i) => (
-              <div className='flex' key={i}>
+              <div className='flex mb-2' key={i}>
                 <div>{item.name}:</div>
                 <a className='ml-4' href={item.link}>
                   {item.value}

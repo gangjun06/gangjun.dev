@@ -25,9 +25,14 @@ const Contact: FC = () => {
       link: 'https://github.com/gangjun06/'
     },
     {
-      name: 'Discord',
-      value: 'Loading ....',
-      link: '#'
+      name: 'Patreon',
+      value: 'gangjun',
+      link: 'https://patreon.com/gangjun'
+    },
+    {
+      name: 'Paypal',
+      value: 'gangjun',
+      link: 'https://paypal.me/gangjun'
     }
   ])
 
@@ -103,9 +108,15 @@ const Contact: FC = () => {
             {contactMethods.map((item, i) => (
               <div className='flex mb-2' key={i}>
                 <div>{item.name}:</div>
-                <a className='ml-4' href={item.link}>
+                <motion.a
+                  className='ml-4'
+                  href={item.link}
+                  whileHover={{
+                    x: 15,
+                    color: '#63f3ab'
+                  }}>
                   {item.value}
-                </a>
+                </motion.a>
               </div>
             ))}
           </div>

@@ -19,10 +19,11 @@ const About: FC = () => {
             Hello! I'm Gangjun Lee
           </div>
           <div className='mt-8 font-color-5'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-            distinctio natus cupiditate debitis, nobis ducimus in, expedita,
-            molestiae blanditiis alias pariatur incidunt sit! Ab debitis
-            corporis dicta, nam suscipit quidem!
+            I am a 15 years old student developer from Korea. I have been
+            interested in programming since I was younger than now, and I am
+            still working hard to learn. Currently I am focusing on web full
+            stack development and I don't have a clear goal yet, but I would
+            like to continue working on it to make good software.
           </div>
         </div>
         <motion.ul className='flex-1 flex flex-col gap-y-2 mt-8 md:mt-0'>

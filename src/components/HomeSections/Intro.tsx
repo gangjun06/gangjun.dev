@@ -16,16 +16,15 @@ const Intro: FC = () => {
         <div>
           <div className='flex'>
             <div className='bg-color-4 text-black px-2 py-1 rounded'>
-              Full-Stack Developer
+              Developer
             </div>
           </div>
           <div className='mt-8 tracking-wide text-4xl'>
-            <p>Talk is cheap.</p>
-            <p>Show me the code</p>
+            <p>Hello!</p>
+            <p>I'm Gangjun Lee</p>
           </div>
           <div className='mt-4 font-color-5'>
-            <p>I develop a lot of interesting things.</p>
-            <p>And I love what I do.</p>
+            <p>I'm a Korea student software engineer.</p>
           </div>
           <div className='font-color-4 mt-12 text-lg underline cursor-pointer'>
             <a href='#contact'>Get In Touch</a>

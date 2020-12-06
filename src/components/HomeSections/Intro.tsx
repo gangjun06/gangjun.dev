@@ -37,7 +37,7 @@ const Intro: FC = () => {
             src={IntroImg}
           />
         </div>
-        <div className='flex' style={{ position: 'absolute', bottom: '25vh' }}>
+        <div className='md:flex absolute' style={{ bottom: '5em' }}>
           <div className='flex items-center'>
             <div className='text-5xl font-bold'>2</div>
             <div className='ml-5 font-color-5'>
@@ -45,7 +45,7 @@ const Intro: FC = () => {
               <p>Experience</p>
             </div>
           </div>
-          <div className='ml-4 sm:ml-32 flex items-center'>
+          <div className='md:ml-4 sm:ml-32 flex items-center'>
             <div className='text-5xl font-bold'>{contributionsCount}</div>
             <div className='ml-5 font-color-5'>
               <p>Contributions</p>

@@ -50,6 +50,7 @@ body {
 #intro {
   margin-top: 10vh;
   min-height: 60vh;
+  position: relative;
 }
 
 /* .container-2 {

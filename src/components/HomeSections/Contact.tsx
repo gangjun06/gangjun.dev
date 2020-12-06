@@ -80,7 +80,6 @@ const Contact: FC = () => {
       try {
         const res = await Axios.get('https://api.gangjun.dev/v1/info/discord')
         const { username, discriminator } = res.data
-        contactMethods.pop()
         setContactMethods(
           contactMethods.concat({
             name: 'Discord',
@@ -121,59 +120,57 @@ const Contact: FC = () => {
             ))}
           </div>
         </div>
-        <div>
-          <div className='w-full max-w-lg'>
-            <div className='flex flex-wrap -mx-3 mb-6'>
-              <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                <BuildLabel text='subject' />
-                <input
-                  className={inputStyle}
-                  type='text'
-                  placeholder='Foo'
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-              </div>
-              <div className='w-full md:w-1/2 px-3'>
-                <BuildLabel text='Email to reply' />
-                <input
-                  className={inputStyle}
-                  type='email'
-                  placeholder='me@example.com'
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className='flex flex-wrap -mx-3 mb-6'>
-              <div className='w-full px-3'>
-                <BuildLabel text='Main Text' />
-                <textarea
-                  className={inputStyle}
-                  placeholder='Enter Text to send...'
-                  rows={6}
-                  style={{ resize: 'none' }}
-                  onChange={(e) => setText(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className='flex justify-between items-center'>
-              <ReCAPTCHA
-                sitekey={recaptcha}
-                theme={'dark'}
-                onChange={onCaptchaChange}
+        <div className='w-full max-w-lg mt-8 md:mt-0'>
+          <div className='flex flex-wrap -mx-3 mb-6'>
+            <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+              <BuildLabel text='subject' />
+              <input
+                className={inputStyle}
+                type='text'
+                placeholder='Foo'
+                onChange={(e) => setTitle(e.target.value)}
               />
-              {captchaValue && (
-                <motion.button
-                  className='bg-color-4 text-black font-bold py-2 px-4 rounded'
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  whileHover={{
-                    scale: 1.1
-                  }}
-                  onClick={submitEmail}>
-                  Submit
-                </motion.button>
-              )}
             </div>
+            <div className='w-full md:w-1/2 px-3'>
+              <BuildLabel text='Email to reply' />
+              <input
+                className={inputStyle}
+                type='email'
+                placeholder='me@example.com'
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className='flex flex-wrap -mx-3 mb-6'>
+            <div className='w-full px-3'>
+              <BuildLabel text='Main Text' />
+              <textarea
+                className={inputStyle}
+                placeholder='Enter Text to send...'
+                rows={6}
+                style={{ resize: 'none' }}
+                onChange={(e) => setText(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className='flex justify-between items-center'>
+            <ReCAPTCHA
+              sitekey={recaptcha}
+              theme={'dark'}
+              onChange={onCaptchaChange}
+            />
+            {captchaValue && (
+              <motion.button
+                className='bg-color-4 text-black font-bold py-2 px-4 rounded'
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileHover={{
+                  scale: 1.1
+                }}
+                onClick={submitEmail}>
+                Submit
+              </motion.button>
+            )}
           </div>
         </div>
       </Container>

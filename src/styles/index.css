@@ -3,11 +3,11 @@
 }
 
 html {
-    --color-whilte: #ffffff;
-    --color-dark:#2d2e32;
-    --color-deepdark:#25262a;
-    --color-primary:  #63f3ab;
-    --color-gray: #8c8d91;
+    --color-white: #ffffff;
+    --color-dark:#1F2833;
+    --color-deepdark:#0E1722;
+    --color-primary:  #66FCF1;
+    --color-gray: #C5C6C7;
 }
 
 body {
@@ -72,43 +72,6 @@ body {
 6: gray2(#333438)
 */
 
-.bg-color-1 {
-  background-color: #ffffff;
-}
-.bg-color-2 {
-  background-color: #2d2e32;
-}
-.bg-color-3 {
-  background-color: #25262a;
-}
-.bg-color-4 {
-  background-color: #63f3ac;
-}
-.bg-color-5 {
-  background-color: #8c8d91;
-}
-.bg-color-6 {
-  background-color: #333438;
-}
-
-.font-color-1 {
-  color: #ffffff;
-}
-.font-color-2 {
-  color: #2d2e32;
-}
-.font-color-3 {
-  color: #25262a;
-}
-.font-color-4 {
-  color: #63f3ab;
-}
-.font-color-5 {
-  color: #8c8d91;
-}
-.font-color-6 {
-  color: #333438;
-}
 
 .color-white-bg {
   background-color: var(--color-white);

@@ -16,7 +16,7 @@ const AboutItem: FC<props> = ({ title, text, icon }) => {
       whileHover={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
       <div className='flex justify-between items-center'>
         <div className=''>{title}</div>
-        <FontAwesomeIcon icon={icon} className='font-color-4' />
+        <FontAwesomeIcon icon={icon} className='color-primary-text' />
       </div>
       <div className='color-gray-text'>{text}</div>
       <div className='mt-3 underline text-sm'>Learn More</div>

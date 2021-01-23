@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 const App: FC = ({ children }) => {
   return (
-    <div id='app' className='bg-color-2 font-color-1'>
+    <div id='app' className='color-white-text color-dark-bg'>
       <Navbar />
       <div className='mx-auto'>{children}</div>
     </div>

@@ -5,6 +5,7 @@ import { recaptcha } from '../../config.json'
 import { motion } from 'framer-motion'
 import Axios from 'axios'
 import { toast } from 'react-toastify'
+import { primary } from '../../styles/color'
 
 const Contact: FC = () => {
   const [title, setTitle] = useState<string>('')
@@ -98,7 +99,7 @@ const Contact: FC = () => {
     'appearance-none block w-full color-dark-bg text-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none'
 
   return (
-    <div id='contact' className='bg-color-3'>
+    <div id='contact' className='color-deepdark-bg'>
       <Container className='md:flex justify-between items-stretch pt-48 pb-24 md:gap-x-24'>
         <div>
           <div className='mt-4 font-semibold text-4xl'>Contact</div>
@@ -112,7 +113,7 @@ const Contact: FC = () => {
                   href={item.link}
                   whileHover={{
                     x: 15,
-                    color: '#63f3ab'
+                    color: primary
                   }}>
                   {item.value}
                 </motion.a>

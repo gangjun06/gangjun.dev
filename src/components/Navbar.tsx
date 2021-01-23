@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
+import { primary } from '../styles/color'
 
 const Navbar: FC = () => {
   const navbarItems = [
@@ -35,7 +36,7 @@ const Navbar: FC = () => {
           <div key={i}>
             <motion.div
               initial={{ fontSize: '1rem' }}
-              whileHover={{ fontSize: '1.125rem', color: '#63F3AB' }}>
+              whileHover={{ fontSize: '1.125rem', color: primary }}>
               <motion.a href={item.link}>{item.name}</motion.a>
             </motion.div>
           </div>
@@ -43,7 +44,7 @@ const Navbar: FC = () => {
       </div>
       <div className='flex items-center'>
         <a
-          className='mr-4 hidden md:flex items-center'
+          className='mr-4 hidden sm:flex items-center'
           href='https://github.com/gangjun06'>
           <FontAwesomeIcon icon={faGithub} />
           <div className='ml-2'>Github</div>

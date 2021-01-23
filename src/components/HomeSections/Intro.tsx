@@ -12,7 +12,7 @@ const Intro: FC = () => {
 
   return (
     <div id='intro'>
-      <Container className='md:flex justify-between items-center'>
+      <Container className='sm:flex sm:flex-col sm:justify-center md:flex-row md:justify-between items-center'>
         <div>
           <div className='flex'>
             <div className='color-primary-bg text-black px-2 py-1 rounded'>
@@ -27,7 +27,25 @@ const Intro: FC = () => {
             <p>I'm a Korea student software engineer.</p>
           </div>
           <div className='color-primary-text mt-12 text-lg underline cursor-pointer'>
-            <a href='#contact'>Get In Touch</a>
+            <a href='#about'>Learn More</a>
+          </div>
+          <div
+            className='my-8 xl:flex xl:absolute xl:my-0'
+            style={{ bottom: '5em' }}>
+            <div className='flex items-center'>
+              <div className='text-5xl font-bold'>2</div>
+              <div className='ml-5 color-gray-text'>
+                <p>Years</p>
+                <p>Experience</p>
+              </div>
+            </div>
+            <div className='xl:ml-4 flex items-center'>
+              <div className='text-5xl font-bold'>{contributionsCount}</div>
+              <div className='ml-5 color-gray-text'>
+                <p>Contributions</p>
+                <p>For 1Year</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className='hidden md:block'>
@@ -36,22 +54,6 @@ const Intro: FC = () => {
             alt='intro'
             src={IntroImg}
           />
-        </div>
-        <div className='md:flex absolute' style={{ bottom: '5em' }}>
-          <div className='flex items-center'>
-            <div className='text-5xl font-bold'>2</div>
-            <div className='ml-5 color-gray-text'>
-              <p>Years</p>
-              <p>Experience</p>
-            </div>
-          </div>
-          <div className='md:ml-4 sm:ml-32 flex items-center'>
-            <div className='text-5xl font-bold'>{contributionsCount}</div>
-            <div className='ml-5 color-gray-text'>
-              <p>Contributions</p>
-              <p>For 1Year</p>
-            </div>
-          </div>
         </div>
       </Container>
     </div>

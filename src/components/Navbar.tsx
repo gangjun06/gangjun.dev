@@ -48,9 +48,6 @@ const Navbar: FC = () => {
           <FontAwesomeIcon icon={faGithub} />
           <div className='ml-2'>Github</div>
         </a>
-        <a className='bg-color-6 w-10 h-10 rounded-full flex justify-center items-center' href="mailto:me@gangjun.dev">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </a>
       </div>
     </div>
   )

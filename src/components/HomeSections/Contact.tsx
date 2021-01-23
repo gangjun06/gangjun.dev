@@ -95,14 +95,14 @@ const Contact: FC = () => {
   }, [])
 
   const inputStyle =
-    'appearance-none block w-full bg-color-2 text-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none'
+    'appearance-none block w-full color-dark-bg text-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none'
 
   return (
     <div id='contact' className='bg-color-3'>
       <Container className='md:flex justify-between items-stretch pt-48 pb-24 md:gap-x-24'>
         <div>
           <div className='mt-4 font-semibold text-4xl'>Contact</div>
-          <div className='font-color-5'>Contact to Gangjun Lee</div>
+          <div className='color-gray-text'>Contact to Gangjun Lee</div>
           <div className='mt-8'>
             {contactMethods.map((item, i) => (
               <div className='flex mb-2' key={i}>
@@ -161,7 +161,7 @@ const Contact: FC = () => {
             />
             {captchaValue && (
               <motion.button
-                className='bg-color-4 text-black font-bold py-2 px-4 rounded'
+                className='color-primary-bg text-black font-bold py-2 px-4 rounded'
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 whileHover={{

@@ -3,10 +3,15 @@
 }
 
 html {
-  background-color: #2d2e32;
+    --color-whilte: #ffffff;
+    --color-dark:#2d2e32;
+    --color-deepdark:#25262a;
+    --color-primary:  #63f3ab;
+    --color-gray: #8c8d91;
 }
 
 body {
+  background-color: val(--color-dark);
 }
 
 @font-face {
@@ -22,25 +27,6 @@ body {
   font-weight: bold;
   font-style: bold;
 }
-
-/* @font-face {
-  font-family: 'NanumGothic';
-  src: url('fonts/NanumGothicBold.eot');
-  src: url('fonts/NanumGothicBold.eot?#iefix') format(‘embedded-opentype’),
-    url('fonts/NanumGothicBold.woff') format(‘woff’),
-    url('fonts/NanumGothicBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'NanumGothic';
-  src: url('fonts/NanumGothicItalic.eot');
-  src: url('fonts/NanumGothicItalic.eot?#iefix') format(‘embedded-opentype’),
-    url('fonts/NanumGothicItalic.woff') format(‘woff’),
-    url('fonts/NanumGothicItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-} */
 
 #app {
   font-family: 'JetBrainsMono', 'sans-serif';
@@ -122,4 +108,32 @@ body {
 }
 .font-color-6 {
   color: #333438;
+}
+
+.color-white-bg {
+  background-color: var(--color-white);
+}
+.color-dark-bg {
+  background-color: var(--color-dark);
+}
+.color-deepdark-bg {
+  background-color: var(--color-deepdark);
+}
+.color-primary-bg {
+  background-color: var(--color-primary);
+}
+.color-white-text {
+  color:var(--color-white);
+}
+.color-dark-text {
+  color: var(--color-dark);
+}
+.color-deepdark-text {
+  color: var(--color-deepdark);
+}
+.color-primary-text {
+  color: var(--color-primary);
+}
+.color-gray-text {
+  color: var(--color-gray);
 }

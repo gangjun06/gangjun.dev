@@ -15,7 +15,7 @@ const Intro: FC = () => {
       <Container className='md:flex justify-between items-center'>
         <div>
           <div className='flex'>
-            <div className='bg-color-4 text-black px-2 py-1 rounded'>
+            <div className='color-primary-bg text-black px-2 py-1 rounded'>
               Developer
             </div>
           </div>
@@ -23,10 +23,10 @@ const Intro: FC = () => {
             <p>Hello!</p>
             <p>I'm Gangjun Lee</p>
           </div>
-          <div className='mt-4 font-color-5'>
+          <div className='mt-4 color-gray-text'>
             <p>I'm a Korea student software engineer.</p>
           </div>
-          <div className='font-color-4 mt-12 text-lg underline cursor-pointer'>
+          <div className='color-primary-text mt-12 text-lg underline cursor-pointer'>
             <a href='#contact'>Get In Touch</a>
           </div>
         </div>
@@ -40,16 +40,16 @@ const Intro: FC = () => {
         <div className='md:flex absolute' style={{ bottom: '5em' }}>
           <div className='flex items-center'>
             <div className='text-5xl font-bold'>2</div>
-            <div className='ml-5 font-color-5'>
+            <div className='ml-5 color-gray-text'>
               <p>Years</p>
               <p>Experience</p>
             </div>
           </div>
           <div className='md:ml-4 sm:ml-32 flex items-center'>
             <div className='text-5xl font-bold'>{contributionsCount}</div>
-            <div className='ml-5 font-color-5'>
+            <div className='ml-5 color-gray-text'>
               <p>Contributions</p>
-              <p>This Year</p>
+              <p>For 1Year</p>
             </div>
           </div>
         </div>

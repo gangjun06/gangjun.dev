@@ -11,14 +11,14 @@ import {
 
 const About: FC = () => {
   return (
-    <div id='about' className='bg-color-3'>
+    <div id='about' className='color-deepdark-bg'>
       <Container className='md:flex flex-row-reverse justify-between items-stretch pt-48 pb-24 md:gap-x-24'>
         <div className='flex-1'>
-          <div className='font-color-5'>Introduce</div>
+          <div className='color-gray-text'>Introduce</div>
           <div className='mt-4 font-semibold text-4xl'>
             Hello! I'm Gangjun Lee
           </div>
-          <div className='mt-8 font-color-5'>
+          <div className='mt-8 color-gray-text'>
             I am a 15 years old student developer from Korea. I have been
             interested in programming since I was younger than now, and I am
             still working hard to learn. Currently I am focusing on web full

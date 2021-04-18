@@ -47,6 +47,7 @@ const Contact: FC = () => {
   )
 
   const submitEmail = async () => {
+    toast.info('Sorry, this form is currently not working. Send Email Instead')
     if (sended) return toast.warning('You already sended')
     const [trimTitle, trimEmail, trimText] = [
       title.trim(),

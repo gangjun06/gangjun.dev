@@ -5,15 +5,20 @@ import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 import './styles/tailwind-build.css'
 import 'react-toastify/dist/ReactToastify.css'
-import Home from './pages/Home'
+import HomePage from './pages/Home'
+import StatusPage from './pages/Status'
 import { ToastContainer } from 'react-toastify'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 render(
   <React.StrictMode>
     <ToastContainer />
-    <App>
-      <Home />
-    </App>
+    <BrowserRouter>
+      <App>
+        <Route path='/' exact component={HomePage} />
+        <Route path='/status' exact component={StatusPage} />
+      </App>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 )

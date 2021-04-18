@@ -1,27 +1,28 @@
 import React, { FC } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
 import { primary } from '../styles/color'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar: FC = () => {
+  const location = useLocation()
   const navbarItems = [
     {
       name: 'Intro',
-      link: '#app'
+      link: '/#app'
     },
     {
       name: 'About',
-      link: '#about'
+      link: '/#about'
     },
     {
       name: 'Projects',
-      link: '#'
+      link: '/#'
     },
     {
       name: 'Contact',
-      link: '#contact'
+      link: '/#contact'
     }
   ]
 
@@ -37,7 +38,11 @@ const Navbar: FC = () => {
             <motion.div
               initial={{ fontSize: '1rem' }}
               whileHover={{ fontSize: '1.125rem', color: primary }}>
-              <motion.a href={item.link}>{item.name}</motion.a>
+              {location.pathname === '/' ? (
+                <motion.a href={item.link}>{item.name}</motion.a>
+              ) : (
+                <Link to={item.link}>{item.name}</Link>
+              )}
             </motion.div>
           </div>
         ))}

@@ -5,7 +5,7 @@ import AboutSection from '../components/HomeSections/About'
 // import ProjectSection from '../components/HomeSections/Projects'
 import ContactSection from '../components/HomeSections/Contact'
 
-const Home: FC = () => {
+const HomePage: FC = () => {
   return (
     <div className=' '>
       <IntroSection />
@@ -16,4 +16,4 @@ const Home: FC = () => {
   )
 }
 
-export default Home
+export default HomePage

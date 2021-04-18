@@ -17,7 +17,7 @@ export type Status = {
 
 export const GetStatus = async (): Promise<Status> => {
   try {
-    const res = await axios.get('https://api.gangjun.dev/v0/status')
+    const res = await axios.get('https://api.gangjun.dev/v1/status')
     return res.data.value
   } catch (e) {
     return {

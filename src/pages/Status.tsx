@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { GetStatus, Status, StatusMode } from '../utils/status'
 import Container from '../components/Container'
+import { toast } from 'react-toastify'
 
 const statusBadgeColor = (mode: StatusMode): string => {
   let color = ''
@@ -15,7 +16,10 @@ const statusBadgeColor = (mode: StatusMode): string => {
 const StatusPage: FC = () => {
   const [data, setData] = useState<null | Status>(null)
   useEffect(() => {
-    GetStatus().then((data) => setData(data))
+    ;(async () => {
+      const res = await GetStatus()
+      setData(res)
+    })()
   }, [])
   return (
     <Container className='mt-24'>
@@ -25,7 +29,7 @@ const StatusPage: FC = () => {
             <div
               className={`${statusBadgeColor(
                 data.mode
-              )} text-black px-2 py-1 rounded`}>
+              )} text-black px-2 py-1 rounded tracking-wide`}>
               {data.mode}
             </div>
           </div>

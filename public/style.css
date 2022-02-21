@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  background-color: val(--color-dark);
   width: 100%;
   height: 100%;
 }
@@ -35,4 +34,9 @@ body {
 #root {
   font-family: "JetBrainsMono", "sans-serif";
   min-height: 100vh;
+}
+
+.intro {
+  height: 70vh;
+  background-color: var(--color-dark);
 }

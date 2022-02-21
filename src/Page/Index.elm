@@ -11,6 +11,7 @@ import Pages.Url
 import Shared
 import View exposing (View)
 import Widget.Layout exposing (PageLayout(..))
+import Widget.MainSection as MainSection
 
 
 type alias Model =
@@ -71,9 +72,11 @@ view :
 view maybeUrl sharedModel static =
     { title = "Gangjun Dev"
     , body =
-        [ div []
-            [ div [ class "text-center text-3xl font-bold" ] [ text "" ]
+        [ div
+            [ class "intro flex items-center justify-center h-screen" ]
+            [ div [ class "text-center text-7xl font-bold" ] [ text "Hello, I'm Gangjun Lee" ]
             ]
+        , MainSection.about
         ]
     , layout = MainPage
     }

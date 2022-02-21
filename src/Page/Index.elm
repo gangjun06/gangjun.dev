@@ -3,8 +3,8 @@ module Page.Index exposing (Data, Model, Msg, page)
 import DataSource exposing (DataSource)
 import Head
 import Head.Seo as Seo
-import Html exposing (div, text)
-import Html.Attributes exposing (class)
+import Html exposing (div, img, text)
+import Html.Attributes exposing (class, src)
 import Page exposing (Page, StaticPayload)
 import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
@@ -72,11 +72,9 @@ view :
 view maybeUrl sharedModel static =
     { title = "Gangjun Dev"
     , body =
-        [ div
-            [ class "intro flex items-center justify-center h-screen" ]
-            [ div [ class "text-center text-7xl font-bold" ] [ text "Hello, I'm Gangjun Lee" ]
-            ]
-        , MainSection.about
+        [ MainSection.intro
+        , MainSection.project
+        , MainSection.contact
         ]
     , layout = MainPage
     }

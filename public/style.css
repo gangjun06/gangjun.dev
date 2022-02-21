@@ -10,6 +10,7 @@ html {
   --color-deepdark: #0e1722;
   --color-primary: #66fcf1;
   --color-gray: #c5c6c7;
+  background-color: var(--color-dark);
 }
 
 body {
@@ -36,7 +37,16 @@ body {
   min-height: 100vh;
 }
 
-.intro {
+#intro {
   height: 70vh;
+  background-color: var(--color-dark);
+}
+
+#project {
+  background-color: var(--color-deepdark);
+}
+
+#contact {
+  height: 50vh;
   background-color: var(--color-dark);
 }

@@ -9,6 +9,7 @@ import Path exposing (Path)
 import Route exposing (Route)
 import SharedTemplate exposing (SharedTemplate)
 import View exposing (View)
+import Widget.Layout exposing (layout)
 
 
 template : SharedTemplate Msg Model Data msg
@@ -95,6 +96,6 @@ view :
     -> View msg
     -> { body : Html msg, title : String }
 view sharedData page model toMsg pageView =
-    { body = Html.div [] pageView.body
+    { body = layout pageView.layout pageView.body
     , title = pageView.title
     }

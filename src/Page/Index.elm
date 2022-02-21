@@ -10,6 +10,7 @@ import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
 import Shared
 import View exposing (View)
+import Widget.Layout exposing (PageLayout(..))
 
 
 type alias Model =
@@ -71,7 +72,8 @@ view maybeUrl sharedModel static =
     { title = "Gangjun Dev"
     , body =
         [ div []
-            [ div [ class "text-center text-3xl font-bold" ] [ text "Hello, World!!" ]
+            [ div [ class "text-center text-3xl font-bold" ] [ text "" ]
             ]
         ]
+    , layout = MainPage
     }

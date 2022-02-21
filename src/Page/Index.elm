@@ -3,6 +3,8 @@ module Page.Index exposing (Data, Model, Msg, page)
 import DataSource exposing (DataSource)
 import Head
 import Head.Seo as Seo
+import Html exposing (div, text)
+import Html.Attributes exposing (class)
 import Page exposing (Page, StaticPayload)
 import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
@@ -42,16 +44,16 @@ head :
 head static =
     Seo.summary
         { canonicalUrlOverride = Nothing
-        , siteName = "elm-pages"
+        , siteName = "Gangjun Dev"
         , image =
             { url = Pages.Url.external "TODO"
             , alt = "elm-pages logo"
             , dimensions = Nothing
             , mimeType = Nothing
             }
-        , description = "TODO"
+        , description = "Gangjun Lee's Personal Website"
         , locale = Nothing
-        , title = "TODO title" -- metadata.title -- TODO
+        , title = "Gangjun Dev"
         }
         |> Seo.website
 
@@ -66,4 +68,10 @@ view :
     -> StaticPayload Data RouteParams
     -> View Msg
 view maybeUrl sharedModel static =
-    View.placeholder "Index"
+    { title = "Gangjun Dev"
+    , body =
+        [ div []
+            [ div [ class "text-center text-3xl font-bold" ] [ text "Hello, World!!" ]
+            ]
+        ]
+    }

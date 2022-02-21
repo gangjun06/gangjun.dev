@@ -1,11 +1,13 @@
 module Widget.MainSection exposing (contact, intro, project)
 
+import Data.Index as IndexData
+import Data.Project as Project
 import Html exposing (Html, a, div, img, text)
 import Html.Attributes exposing (..)
 
 
-intro : Html msg
-intro =
+intro : IndexData.Metadata -> Html msg
+intro data =
     div
         [ id "intro", class "flex items-center justify-center" ]
         [ div [ class "container mx-auto px-12 lg:px-36 md:flex flex-row-reverse justify-between items-stretch pt-48 pb-24 md:gap-x-24" ]
@@ -14,28 +16,24 @@ intro =
                 ]
             , div []
                 [ div [ class "text-gray-300" ] [ text "👋 Hello, I'm" ]
-                , div [ class "mt-1 font-semibold text-4xl" ] [ text "Gangjun Lee" ]
-                , div [ class "mt-4 text-primary" ] [ text "Korean Student / Full-Stack Developer" ]
+                , div [ class "mt-1 font-semibold text-4xl" ] [ text data.name ]
+                , div [ class "mt-4 text-primary" ] [ text data.description ]
                 , div [ class "mt-4 text-gray-100" ]
-                    [ text """I am a 15 years old student developer from Korea. I have been
-                            interested in programming since I was younger than now, and I am
-                            still working hard to learn. Currently I am focusing on web full
-                            stack development and I don't have a clear goal yet, but I would
-                            like to continue working on it to make good software.""" ]
+                    [ text data.content ]
                 ]
             ]
         ]
 
 
-projectCard : { name : String, description : String, image : String, link : String, source : String } -> Html msg
+projectCard : Project.Metadata -> Html msg
 projectCard data =
-    div [ class "bg-dark shadow-xl relative" ]
-        [ img [ src data.image ] []
+    div [ class "bg-dark shadow-xl relative rounded" ]
+        [ img [ class "rounded", src data.image ] []
         , a [ href data.link, target "_blank", class """
 opacity-0 hover:opacity-100 flex hover:bg-dark/70 px-2 text-center
 absolute top-0 w-full h-full flex-col items-center justify-center
-transition-all""" ]
-            [ a [ class "font-bold" ] [ text data.name ]
+transition-all rounded""" ]
+            [ a [ class "font-bold" ] [ text data.title ]
             , div [ class "text-gray-200" ] [ text data.description ]
             , a [ class "mt-3 text-gray-300 underline hover:font-bold", href data.source, target "_blank" ]
                 [ text "Source Code" ]
@@ -43,10 +41,10 @@ transition-all""" ]
         ]
 
 
-project : Html msg
-project =
+project : List Project.Metadata -> Html msg
+project data =
     div [ id "project", class "py-36" ]
-        [ div [ class "container mx-auto px-12 lg:px-36 flex flex-col items-center justify-center" ]
+        [ div [ class "container mx-auto px-12 lg:px-36 flex flex-col items-center justify-center text-center" ]
             [ div []
                 [ div [ class "font-semibold text-4xl" ]
                     [ text "Projects"
@@ -54,9 +52,7 @@ project =
                 , div [ class "text-gray-300" ] [ text "List of projects I have worked on" ]
                 ]
             , div [ class "mt-6 grid grid-cols-3 grid-flow-row gap-4 w-full" ]
-                [ projectCard { name = "D4DJ.Info", description = "D4DJ Game Information Website", image = "/images/projects/d4dj.png", link = "https://d4dj.info", source = "https://github.com/gangjun06/d4dj-info" }
-                , projectCard { name = "Mol?ru", description = "Mollu(Meme) programming Language", image = "/images/projects/mollu.png", link = "https://mollu.gangjun.dev", source = "https://github.com/bukgeuk-penguin/mollu-lang-web" }
-                ]
+                (List.map (\d -> projectCard d) data)
             ]
         ]
 
@@ -69,14 +65,12 @@ contactCard { name, value, link } =
         ]
 
 
-contact : Html msg
-contact =
+contact : List IndexData.MetadataContact -> Html msg
+contact data =
     div [ id "contact", class "flex items-center justify-center" ]
         [ div []
             [ div [ class "text-4xl font-bold text-center mb-4" ]
                 [ text "Contact" ]
-            , contactCard { name = "Email", value = "me@gangjun.dev", link = "mailto:me@gangun.dev" }
-            , contactCard { name = "KakaoTalk", value = "gangjun06", link = "" }
-            , contactCard { name = "Discord", value = "gangjun06#1195", link = "#" }
+            , div [] (List.map (\d -> contactCard d) data)
             ]
         ]

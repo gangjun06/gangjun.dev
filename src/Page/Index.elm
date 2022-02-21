@@ -1,5 +1,7 @@
 module Page.Index exposing (Data, Model, Msg, page)
 
+import Data.Index as IndexData
+import Data.Project as Project
 import DataSource exposing (DataSource)
 import Head
 import Head.Seo as Seo
@@ -37,7 +39,9 @@ page =
 
 data : DataSource Data
 data =
-    DataSource.succeed ()
+    DataSource.map2 (\index projects -> { index = index, projects = projects })
+        IndexData.metadataDataSource
+        Project.projectsDataSource
 
 
 head :
@@ -61,7 +65,7 @@ head static =
 
 
 type alias Data =
-    ()
+    { index : IndexData.Metadata, projects : List Project.Metadata }
 
 
 view :
@@ -72,9 +76,9 @@ view :
 view maybeUrl sharedModel static =
     { title = "Gangjun Dev"
     , body =
-        [ MainSection.intro
-        , MainSection.project
-        , MainSection.contact
+        [ MainSection.intro static.data.index
+        , MainSection.project static.data.projects
+        , MainSection.contact static.data.index.contact
         ]
     , layout = MainPage
     }

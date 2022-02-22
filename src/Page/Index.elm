@@ -7,6 +7,7 @@ import Head
 import Head.Seo as Seo
 import Html exposing (div, img, text)
 import Html.Attributes exposing (class, src)
+import MimeType
 import Page exposing (Page, StaticPayload)
 import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
@@ -52,10 +53,10 @@ head static =
         { canonicalUrlOverride = Nothing
         , siteName = "Gangjun Dev"
         , image =
-            { url = Pages.Url.external "TODO"
-            , alt = "elm-pages logo"
-            , dimensions = Nothing
-            , mimeType = Nothing
+            { url = Pages.Url.external "/penguin.png"
+            , alt = "Gangjun Logo"
+            , dimensions = Just { width = 1006, height = 1006 }
+            , mimeType = Just (MimeType.toString (MimeType.Image MimeType.Png))
             }
         , description = "Gangjun Lee's Personal Website"
         , locale = Nothing

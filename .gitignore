@@ -6,3 +6,4 @@ functions/render/elm-pages-cli.js
 
 *.log
 public/tw.css
+.DS_STORE

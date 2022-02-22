@@ -10,9 +10,9 @@ intro : IndexData.Metadata -> Html msg
 intro data =
     div
         [ id "intro", class "flex items-center justify-center" ]
-        [ div [ class "container mx-auto px-12 lg:px-36 md:flex flex-row-reverse justify-between items-stretch pt-48 pb-24 md:gap-x-24" ]
-            [ div [ class "flex items-center justify-center gap-y-2 mt-8 md:mt-0" ]
-                [ img [ src "/penguin.png", class "rounded-full" ] []
+        [ div [ class "container mx-auto px-8 xl:px-36 md:flex flex-row-reverse justify-between items-stretch md:gap-x-24" ]
+            [ div [ class "flex items-center justify-center mt-24 mb-4 md:my-0 w-full" ]
+                [ img [ src "/penguin.png", class "rounded-full w-64 md:w-full" ] []
                 ]
             , div []
                 [ div [ class "text-gray-300" ] [ text "👋 Hello, I'm" ]
@@ -51,7 +51,7 @@ project data =
                     ]
                 , div [ class "text-gray-300" ] [ text "List of projects I have worked on" ]
                 ]
-            , div [ class "mt-6 grid grid-cols-3 grid-flow-row gap-4 w-full" ]
+            , div [ class "mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-flow-row gap-4 w-full" ]
                 (List.map (\d -> projectCard d) data)
             ]
         ]
@@ -59,7 +59,7 @@ project data =
 
 contactCard : { name : String, value : String, link : String } -> Html msg
 contactCard { name, value, link } =
-    a [ class "mt-2 px-4 py-3 flex justify-between w-96 bg-deepdark rounded hover:shadow-xl", href link ]
+    a [ class "mt-2 px-4 py-3 flex justify-between w-full sm:w-96 bg-deepdark rounded hover:shadow-xl", href link ]
         [ div [] [ text name ]
         , div [] [ text value ]
         ]
@@ -67,10 +67,8 @@ contactCard { name, value, link } =
 
 contact : List IndexData.MetadataContact -> Html msg
 contact data =
-    div [ id "contact", class "flex items-center justify-center" ]
-        [ div []
-            [ div [ class "text-4xl font-bold text-center mb-4" ]
-                [ text "Contact" ]
-            , div [] (List.map (\d -> contactCard d) data)
-            ]
+    div [ id "contact", class "flex items-center flex-col justify-center py-36 px-4" ]
+        [ div [ class "text-4xl font-bold text-center mb-4" ]
+            [ text "Contact" ]
+        , div [ class "w-full flex flex-col items-center" ] (List.map (\d -> contactCard d) data)
         ]

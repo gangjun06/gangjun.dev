@@ -1,9 +1,7 @@
 module Site exposing (config)
 
-import Color
 import DataSource
 import Head
-import MimeType
 import Pages.Manifest as Manifest exposing (IconPurpose(..))
 import Pages.Url exposing (fromPath)
 import Route

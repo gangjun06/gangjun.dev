@@ -38,7 +38,7 @@ body {
 }
 
 #intro {
-  height: 70vh;
+  height: 100vh;
   background-color: var(--color-dark);
 }
 
@@ -47,6 +47,5 @@ body {
 }
 
 #contact {
-  height: 50vh;
   background-color: var(--color-dark);
 }

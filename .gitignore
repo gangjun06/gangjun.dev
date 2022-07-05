@@ -1,9 +1,0 @@
-node_modules/
-elm-stuff/
-dist/
-.elm-pages/
-functions/render/elm-pages-cli.js
-
-*.log
-public/tw.css
-.DS_STORE
